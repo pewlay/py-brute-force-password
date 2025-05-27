@@ -50,7 +50,10 @@ def brute_force_password() -> None:
 
     print("\nFinal passwords:")
     for hashed_password in PASSWORDS_TO_BRUTE_FORCE:
-        print(f"{hashed_password} -> {combined[hashed_password]}")
+        if hashed_password in combined:
+            print(f"{hashed_password} -> {combined[hashed_password]}")
+        else:
+            print(f"{hashed_password} -> NOT FOUND")
 
 
 if __name__ == "__main__":
